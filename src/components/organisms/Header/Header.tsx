@@ -27,7 +27,7 @@ export const Header = async () => {
   }
 
   const regions = await listRegions()
-
+  const siteName = `${process.env.NEXT_PUBLIC_SITE_NAME}`
   const wishlistCount = wishlist?.[0]?.products.length || 0
 
   const { categories, parentCategories } = (await listCategories({
@@ -55,7 +55,7 @@ export const Header = async () => {
               src="/Logo.svg"
               width={126}
               height={40}
-              alt="Logo"
+              alt= {siteName}
               priority
             />
           </LocalizedClientLink>
